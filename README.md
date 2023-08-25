@@ -1,6 +1,6 @@
 # applepay
 
-[![GoDoc](https://godoc.org/github.com/processout/applepay?status.svg)](https://godoc.org/github.com/processout/applepay)
+[![GoDoc](https://godoc.org/github.com/kidus-tiliksew/applepay?status.svg)](https://godoc.org/github.com/kidus-tiliksew/applepay)
 
 applepay is a Go package for processing Apple Pay transactions easily. It is aimed at merchants or PSPs that are looking to manage their own Apple Pay flow, as opposed to letting a third-party (such as Stripe) do it end-to-end. You will need a paid Apple Developer account to use this.
 
@@ -17,6 +17,7 @@ You may need to change your `PKG_CONFIG_PATH` to include OpenSSL. For example, o
 ## Getting up and running with the example
 
 Requirements:
+
 - An account in the Apple Developer Program
 - A recent version of Go (tested with v1.9.2)
 - [`cfssl`](https://github.com/cloudflare/cfssl)
@@ -26,17 +27,17 @@ Requirements:
 1. Log into your developer account. [In the developer console](https://developer.apple.com/account/ios/identifier/merchant), create a Merchant ID
 
 1. Verify your domain by serving the `apple-developer-merchantid-domain-association` file at `https://yourdomain.com/.well-known/apple-developer-merchantid-domain-association` (the example app will do it for you if you put it in `example/static/.well-known`).
-**Note**: Be careful to support one of the [supported cipher suites](https://developer.apple.com/reference/applepayjs#2166536) for HTTPS!
+   **Note**: Be careful to support one of the [supported cipher suites](https://developer.apple.com/reference/applepayjs#2166536) for HTTPS!
 
 1. Edit the JSON files in the `certs/` directory of this repo with your merchant ID, your domain and your email address.
 
-1. Generate a *Payment Processing Certificate* request by running `make cert-processing.certSigningRequest` in the `certs/` directory.
+1. Generate a _Payment Processing Certificate_ request by running `make cert-processing.certSigningRequest` in the `certs/` directory.
 
 1. Upload the certificate request to the developer console. Select your merchant ID and click "Create Certificate" in the "Payment Processing Certificate" section
 
 1. Download the signed certificate to `certs/cert-processing.cer`, run `make cert-processing.crt` to convert it to the proper format
 
-1. Repeat steps 4-6 for the *Merchant Identity Certificate*, by running `make cert-merchant.certSigningRequest` and, with the certificate, `make cert-merchant.crt`
+1. Repeat steps 4-6 for the _Merchant Identity Certificate_, by running `make cert-merchant.certSigningRequest` and, with the certificate, `make cert-merchant.crt`
 
 1. Move the directory `certs/` to `example/certs/`
 

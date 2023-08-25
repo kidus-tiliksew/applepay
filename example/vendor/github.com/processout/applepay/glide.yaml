@@ -1,9 +1,9 @@
-package: github.com/processout/applepay
+package: github.com/kidus-tiliksew/applepay
 import:
-- package: github.com/pkg/errors
-  version: v0.8.0
+  - package: github.com/pkg/errors
+    version: v0.8.0
 testImport:
-- package: github.com/smartystreets/goconvey
-  version: 1.6.3
-  subpackages:
-  - convey
+  - package: github.com/smartystreets/goconvey
+    version: 1.6.3
+    subpackages:
+      - convey

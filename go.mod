@@ -1,4 +1,4 @@
-module github.com/processout/applepay
+module github.com/kidus-tiliksew/applepay
 
 go 1.21
 
